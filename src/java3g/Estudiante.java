@@ -15,12 +15,12 @@ public class Estudiante extends javax.swing.JFrame {
     /**
      * Creates new form Estudiante
      */
+    public Validador objValidador;
+
     public Estudiante() {
         initComponents();
+        objValidador = new Validador();
     }
-    
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -188,16 +188,22 @@ public class Estudiante extends javax.swing.JFrame {
         }
         return true;
     }
+
+    public void validaCamposTexto2() {
+        objValidador.validaCajaTextoCadena(jTextField1);
+        objValidador.validaCajaTextoCadena(jTextField2);
+        objValidador.validaCadena(jTextField1.getText());
+    }
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
+        this.validaCamposTexto2();
+        
         System.out.println("Hola" + this.jTextField1.getText());
         System.out.println("Tamaño jtextfield1: " + this.jTextField1.getText().length());
         System.out.println("Metodo empty (tf1): " + this.jTextField1.getText().isEmpty());
         System.out.println("Metodo blank (tf1): " + this.jTextField1.getText().isBlank());
 
-        
-        
         this.jTextField1.setText("");
         this.jTextField2.setText("");
         this.jTextField3.setText("");
@@ -209,13 +215,15 @@ public class Estudiante extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
-    
-    
+
+
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "No no no es aqui");
-        if(!this.validaCamposTexto()) return;
-   
+        if (!this.validaCamposTexto()) {
+            return;
+        }
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**

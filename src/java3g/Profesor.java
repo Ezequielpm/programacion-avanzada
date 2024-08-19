@@ -9,12 +9,13 @@ package java3g;
  * @author ezequ
  */
 public class Profesor extends javax.swing.JFrame {
-
+    public Validador objValidador;
     /**
      * Creates new form Profesor
      */
     public Profesor() {
         initComponents();
+        objValidador = new Validador();
     }
 
     /**
@@ -142,9 +143,16 @@ public class Profesor extends javax.swing.JFrame {
 
     
     
+        public void validaCamposTexto2() {
+        objValidador.validaCajaTextoCadena(jTextField1);
+        objValidador.validaCajaTextoCadena(jTextField2);
+        objValidador.validaCadena(jTextField1.getText());
+    }
+    
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.validaCamposTexto2();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
