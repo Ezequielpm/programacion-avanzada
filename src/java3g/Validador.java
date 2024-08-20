@@ -15,16 +15,37 @@ public class Validador {
     public Validador() {
 
     }
-    public void validaCajaTextoCadena(javax.swing.JTextField cajaTexto){
-        if(cajaTexto.getText().isBlank()){
+    
+    public boolean validaCajaTextoCadena(javax.swing.JTextField cajaTexto) {
+        if (cajaTexto.getText().isBlank()) {
             JOptionPane.showMessageDialog(null, "Urgente Campo requerido");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean validaCajaTextoEntero(javax.swing.JTextField cajaTexto) {
+        if (cajaTexto.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Urgente Campo requerido");
+            return false;
+        } else {
+            try {
+                int a = Integer.parseInt(cajaTexto.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Valor no permitido, debe ser un numero");
+                System.err.println("Error de conversión");
+                return false;
+            }
+            return true;
         }
     }
-    
-    public void validaCadena(String cadena){
-        if(cadena.isBlank()){
+
+    public boolean validaCadena(String cadena) {
+        if (cadena.isBlank()) {
             JOptionPane.showMessageDialog(null, "Campo requerido de la cadena");
+            return false;
         }
+        return true;
     }
-    
+
 }

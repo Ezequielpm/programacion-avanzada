@@ -190,15 +190,15 @@ public class Estudiante extends javax.swing.JFrame {
     }
 
     public void validaCamposTexto2() {
-        objValidador.validaCajaTextoCadena(jTextField1);
-        objValidador.validaCajaTextoCadena(jTextField2);
-        objValidador.validaCadena(jTextField1.getText());
+         if (!objValidador.validaCajaTextoEntero(jTextField1)) return;
+         if (!objValidador.validaCajaTextoCadena(jTextField2)) return;
+//        objValidador.validaCadena(jTextField1.getText());
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.validaCamposTexto2();
-        
+
         System.out.println("Hola" + this.jTextField1.getText());
         System.out.println("Tamaño jtextfield1: " + this.jTextField1.getText().length());
         System.out.println("Metodo empty (tf1): " + this.jTextField1.getText().isEmpty());
