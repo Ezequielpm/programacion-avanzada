@@ -4,6 +4,7 @@
  */
 package java3g;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,10 +17,14 @@ public class Estudiante extends javax.swing.JFrame {
      * Creates new form Estudiante
      */
     public Validador objValidador;
+    EstudianteObj objEstudiante;
+    ArrayList<EstudianteObj> listaEstudiante;
 
     public Estudiante() {
         initComponents();
         objValidador = new Validador();
+        objEstudiante = new EstudianteObj();
+        listaEstudiante = new ArrayList();
     }
 
     /**
@@ -190,11 +195,21 @@ public class Estudiante extends javax.swing.JFrame {
     }
 
     public void validaCamposTexto2() {
-         if (!objValidador.validaCajaTextoEntero(jTextField1)) return;
-         if (!objValidador.validaCajaTextoCadena(jTextField2)) return;
-         if (!objValidador.validaCajaTextoCadena(jTextField3)) return;
-         if (!objValidador.validaCajaTextoCadena(jTextField4)) return;
-         if (!objValidador.validaCajaTextoEnteroEdad(jTextField5)) return;
+        if (!objValidador.validaCajaTextoEntero(jTextField1)) {
+            return;
+        }
+        if (!objValidador.validaCajaTextoCadena(jTextField2)) {
+            return;
+        }
+        if (!objValidador.validaCajaTextoCadena(jTextField3)) {
+            return;
+        }
+        if (!objValidador.validaCajaTextoCadena(jTextField4)) {
+            return;
+        }
+        if (!objValidador.validaCajaTextoEnteroEdad(jTextField5)) {
+            return;
+        }
 //        objValidador.validaCadena(jTextField1.getText());
     }
 
@@ -206,15 +221,32 @@ public class Estudiante extends javax.swing.JFrame {
         System.out.println("Tamaño jtextfield1: " + this.jTextField1.getText().length());
         System.out.println("Metodo empty (tf1): " + this.jTextField1.getText().isEmpty());
         System.out.println("Metodo blank (tf1): " + this.jTextField1.getText().isBlank());
-
+        objEstudiante.setMatricula(Integer.parseInt(this.jTextField1.getText()));
+        objEstudiante.setNombre(this.jTextField2.getText());
+        objEstudiante.setApPaterno(this.jTextField3.getText());
+        objEstudiante.setApMaterno(this.jTextField4.getText());        
+        objEstudiante.setEdad(Integer.parseInt(this.jTextField5.getText()));  
+        
+        limpiar();
+        listaEstudiante.add(objEstudiante);
+        imprimirLista();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public void imprimirLista(){
+        EstudianteObj objAuxiliar = null;
+        System.out.println("Valores de los objetos");
+        for (int i = 0; i < listaEstudiante.size(); i++) {
+            objAuxiliar = listaEstudiante.get(i);
+            System.out.println("Matricula: "+objAuxiliar.getMatricula());
+            System.out.println("Nombre: "+objAuxiliar.getNombre());
+        }
+    }
+    public void limpiar() {
         this.jTextField1.setText("");
         this.jTextField2.setText("");
         this.jTextField3.setText("");
         this.jTextField4.setText("");
         this.jTextField5.setText("");
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
