@@ -192,6 +192,9 @@ public class Estudiante extends javax.swing.JFrame {
     public void validaCamposTexto2() {
          if (!objValidador.validaCajaTextoEntero(jTextField1)) return;
          if (!objValidador.validaCajaTextoCadena(jTextField2)) return;
+         if (!objValidador.validaCajaTextoCadena(jTextField3)) return;
+         if (!objValidador.validaCajaTextoCadena(jTextField4)) return;
+         if (!objValidador.validaCajaTextoEnteroEdad(jTextField5)) return;
 //        objValidador.validaCadena(jTextField1.getText());
     }
 

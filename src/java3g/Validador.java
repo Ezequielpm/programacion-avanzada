@@ -53,7 +53,7 @@ public class Validador {
                 System.err.println("Error de conversión");
                 return false;
             }
-            if (a < 0 || a > 100) {
+            if (a < 0 && a > 100) {
                 //bien
             } else {
                 JOptionPane.showMessageDialog(null, "Edad no permitida");
