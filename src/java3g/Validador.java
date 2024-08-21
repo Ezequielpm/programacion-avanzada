@@ -15,7 +15,7 @@ public class Validador {
     public Validador() {
 
     }
-    
+
     public boolean validaCajaTextoCadena(javax.swing.JTextField cajaTexto) {
         if (cajaTexto.getText().isBlank()) {
             JOptionPane.showMessageDialog(null, "Urgente Campo requerido");
@@ -34,6 +34,29 @@ public class Validador {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Valor no permitido, debe ser un numero");
                 System.err.println("Error de conversión");
+                return false;
+            }
+            return true;
+        }
+    }
+
+    public boolean validaCajaTextoEnteroEdad(javax.swing.JTextField cajaTexto) {
+        int a = 0;
+        if (cajaTexto.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Urgente Campo requerido");
+            return false;
+        } else {
+            try {
+                a = Integer.parseInt(cajaTexto.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Valor no permitido, debe ser un numero");
+                System.err.println("Error de conversión");
+                return false;
+            }
+            if (a < 0 || a > 100) {
+                //bien
+            } else {
+                JOptionPane.showMessageDialog(null, "Edad no permitida");
                 return false;
             }
             return true;
