@@ -40,6 +40,8 @@ public class Validador {
         }
     }
 
+    /* La siguiente función no fue hecha en clases, sino como tarea (validar
+    la edad)*/
     public boolean validaCajaTextoEnteroEdad(javax.swing.JTextField cajaTexto) {
         int a = 0;
         if (cajaTexto.getText().isBlank()) {

@@ -216,6 +216,8 @@ public class Estudiante extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.validaCamposTexto2();
+        /* ^ aqui hay un error, se corrige en la
+        rama arreglo-bugs*/
 
         System.out.println("Hola" + this.jTextField1.getText());
         System.out.println("Tamaño jtextfield1: " + this.jTextField1.getText().length());
@@ -224,22 +226,23 @@ public class Estudiante extends javax.swing.JFrame {
         objEstudiante.setMatricula(Integer.parseInt(this.jTextField1.getText()));
         objEstudiante.setNombre(this.jTextField2.getText());
         objEstudiante.setApPaterno(this.jTextField3.getText());
-        objEstudiante.setApMaterno(this.jTextField4.getText());        
-        objEstudiante.setEdad(Integer.parseInt(this.jTextField5.getText()));  
-        
+        objEstudiante.setApMaterno(this.jTextField4.getText());
+        objEstudiante.setEdad(Integer.parseInt(this.jTextField5.getText()));
+
         limpiar();
         listaEstudiante.add(objEstudiante);
         imprimirLista();
     }//GEN-LAST:event_jButton1ActionPerformed
-    public void imprimirLista(){
+    public void imprimirLista() {
         EstudianteObj objAuxiliar = null;
         System.out.println("Valores de los objetos");
         for (int i = 0; i < listaEstudiante.size(); i++) {
             objAuxiliar = listaEstudiante.get(i);
-            System.out.println("Matricula: "+objAuxiliar.getMatricula());
-            System.out.println("Nombre: "+objAuxiliar.getNombre());
+            System.out.println("Matricula: " + objAuxiliar.getMatricula());
+            System.out.println("Nombre: " + objAuxiliar.getNombre());
         }
     }
+
     public void limpiar() {
         this.jTextField1.setText("");
         this.jTextField2.setText("");
