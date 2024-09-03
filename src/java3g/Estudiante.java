@@ -23,8 +23,8 @@ public class Estudiante extends javax.swing.JFrame {
     public Estudiante() {
         initComponents();
         objValidador = new Validador();
-        objEstudiante = new EstudianteObj();
         listaEstudiante = new ArrayList();
+//        objEstudiante = new EstudianteObj(); Aqui estaba instanciado
     }
 
     /**
@@ -218,6 +218,7 @@ public class Estudiante extends javax.swing.JFrame {
         this.validaCamposTexto2();
         /* ^ aqui hay un error, se corrige en la
         rama arreglo-bugs*/
+        objEstudiante = new EstudianteObj(); // Aqui se soluciona el problema
 
         System.out.println("Hola" + this.jTextField1.getText());
         System.out.println("Tamaño jtextfield1: " + this.jTextField1.getText().length());
