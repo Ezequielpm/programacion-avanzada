@@ -10,19 +10,23 @@ import java.util.ArrayList;
  *
  * @author ezequ
  */
-public class OperacionesEstudianteLista extends CRUD{
+public class OperacionesEstudianteLista extends CRUD {
+
     ArrayList<Estudiante> objListaEstudiante;
 
     public OperacionesEstudianteLista() {
-        objListaEstudiante = new ArrayList<>();
+        objListaEstudiante = new ArrayList();
     }
-    
-    
-    
+
     @Override
-    public void create() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void create(Estudiante objEstudiante) {
+        objListaEstudiante.add(objEstudiante);
     }
+    
+//    @Override
+//    public void create() {
+//    }
+
 
     @Override
     public void read() {
@@ -38,5 +42,5 @@ public class OperacionesEstudianteLista extends CRUD{
     public void delete() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }

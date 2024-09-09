@@ -9,7 +9,7 @@ package java3g;
  * @author ezequ
  */
 public abstract class CRUD {
-    public abstract void create();
+    public abstract void create(Estudiante objEstudiante);
     public abstract void read();
     public abstract void update();
     public abstract void delete();
