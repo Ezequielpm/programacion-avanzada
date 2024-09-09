@@ -12,6 +12,13 @@ import java.util.ArrayList;
  */
 public class OperacionesEstudianteLista extends CRUD{
     ArrayList<Estudiante> objListaEstudiante;
+
+    public OperacionesEstudianteLista() {
+        objListaEstudiante = new ArrayList<>();
+    }
+    
+    
+    
     @Override
     public void create() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
