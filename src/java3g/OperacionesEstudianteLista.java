@@ -13,13 +13,14 @@ import java.util.ArrayList;
 public class OperacionesEstudianteLista extends CRUD {
 
     ArrayList<Estudiante> objListaEstudiante;
-
+    Estudiante objEstudiante;
+    
     public OperacionesEstudianteLista() {
         objListaEstudiante = new ArrayList();
     }
 
     @Override
-    public void create(Estudiante objEstudiante) {
+    public void create() {
         objListaEstudiante.add(objEstudiante);
     }
     
@@ -43,4 +44,14 @@ public class OperacionesEstudianteLista extends CRUD {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public Estudiante getObjEstudiante() {
+        return objEstudiante;
+    }
+
+    public void setObjEstudiante(Estudiante objEstudiante) {
+        this.objEstudiante = objEstudiante;
+    }
+
+    
+    
 }
