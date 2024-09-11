@@ -2,9 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package java3g;
+package vista;
 
+import controlador.ControladorEstudianteAlta;
+import controlador.Validador;
+import modelo.Estudiante;
 import java.util.ArrayList;
+import controlador.OperacionesEstudianteLista;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,13 +24,14 @@ public class EstudianteAlta extends javax.swing.JFrame {
     Estudiante objEstudiante;
     ArrayList<Estudiante> listaEstudiante;
     OperacionesEstudianteLista objOpEstudianteLista;
-
+    ControladorEstudianteAlta objControladorEstudianteAlta;
     public EstudianteAlta() {
         initComponents();
         objValidador = new Validador();
         listaEstudiante = new ArrayList();
 //        objEstudiante = new EstudianteObj(); Aqui estaba instanciado
         objOpEstudianteLista = new OperacionesEstudianteLista();
+        objControladorEstudianteAlta = new ControladorEstudianteAlta(this);
     }
 
     /**
@@ -80,11 +85,6 @@ public class EstudianteAlta extends javax.swing.JFrame {
         });
 
         jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel6.setText("Edad");
 
@@ -214,32 +214,6 @@ public class EstudianteAlta extends javax.swing.JFrame {
         }
 //        objValidador.validaCadena(jTextField1.getText());
     }
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.validaCamposTexto2();
-        /* ^ aqui hay un error, se corrige en la
-        rama arreglo-bugs*/
-        objEstudiante = new Estudiante(); // Aqui se soluciona el problema
-
-        System.out.println("Hola" + this.jTextField1.getText());
-        System.out.println("Tamaño jtextfield1: " + this.jTextField1.getText().length());
-        System.out.println("Metodo empty (tf1): " + this.jTextField1.getText().isEmpty());
-        System.out.println("Metodo blank (tf1): " + this.jTextField1.getText().isBlank());
-        objEstudiante.setMatricula(Integer.parseInt(this.jTextField1.getText()));
-        objEstudiante.setNombre(this.jTextField2.getText());
-        objEstudiante.setApPaterno(this.jTextField3.getText());
-        objEstudiante.setApMaterno(this.jTextField4.getText());
-        objEstudiante.setEdad(Integer.parseInt(this.jTextField5.getText()));
-        
-        //listaEstudiante.add(objEstudiante);
-        this.objOpEstudianteLista.setObjEstudiante(objEstudiante);
-        this.objOpEstudianteLista.create();
-        
-        limpiar();
-        
-        //imprimirLista();
-    }//GEN-LAST:event_jButton1ActionPerformed
     public void imprimirLista() {
         Estudiante objAuxiliar = null;
         System.out.println("Valores de los objetos");
@@ -308,7 +282,7 @@ public class EstudianteAlta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
