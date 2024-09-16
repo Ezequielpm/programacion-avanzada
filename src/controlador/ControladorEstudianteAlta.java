@@ -14,17 +14,35 @@ import vista.EstudianteAlta;
  * @author ezequ
  */
 public class ControladorEstudianteAlta implements ActionListener {
+
     EstudianteAlta objEstudianteAlta;
-    public ControladorEstudianteAlta(EstudianteAlta objEstudianteAlta){
+    Validador objValidador;
+
+    public ControladorEstudianteAlta(EstudianteAlta objEstudianteAlta) {
         this.objEstudianteAlta = objEstudianteAlta;
         objEstudianteAlta.jButton1.addActionListener(this);
+        objValidador = new Validador();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==objEstudianteAlta.jButton1){
+        if (e.getSource() == objEstudianteAlta.jButton1) {
             System.out.println("Escuchador del boton");
-            
+            if (!this.objValidador.validaCajaTextoEntero(objEstudianteAlta.getjTextField1())) {
+                return;
+            }
+            else if(!this.objValidador.validaCajaTextoCadena(objEstudianteAlta.getjTextField2())){
+                return;
+            }
+            else if(!this.objValidador.validaCajaTextoCadena(objEstudianteAlta.getjTextField3())){
+                return;
+            }
+            else if(!this.objValidador.validaCajaTextoCadena(objEstudianteAlta.getjTextField4())){
+                
+            }
+            else if(!this.objValidador.validaCajaTextoEnteroEdad(objEstudianteAlta.getjTextField5())){
+                return;
+            }
 //            this.validaCamposTexto2();
 //        /* ^ aqui hay un error, se corrige en la
 //        rama arreglo-bugs*/
@@ -47,5 +65,5 @@ public class ControladorEstudianteAlta implements ActionListener {
 //        limpiar();
         }
     }
-    
+
 }
