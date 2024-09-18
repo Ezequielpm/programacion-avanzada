@@ -63,6 +63,14 @@ public class ControladorEstudianteAlta implements ActionListener {
 //        this.objOpEstudianteLista.create();
 //        
 //        limpiar();
+
+        //Opc
+        OperacionesEstudianteLista objOperacionesEstudianteLista;
+        objOperacionesEstudianteLista = new OperacionesEstudianteLista();
+        Estudiante estudiante = new Estudiante();
+        objOperacionesEstudianteLista.setObjEstudiante(estudiante);
+        objOperacionesEstudianteLista.create();
+        
         }
     }
 
