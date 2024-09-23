@@ -4,13 +4,15 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ezequ
  */
 public abstract class CRUD {
     public abstract void create();
-    public abstract void read();
+    public abstract ArrayList read();
     public abstract void update();
     public abstract void delete();
 }

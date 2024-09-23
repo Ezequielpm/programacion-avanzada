@@ -8,20 +8,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Estudiante;
 import vista.EstudianteAlta;
+import vista.MenuGeneralEstudiante;
 
 /**
  *
  * @author ezequ
  */
 public class ControladorEstudianteAlta implements ActionListener {
-
+    OperacionesEstudianteLista objOperacionesEstudianteLista;
     EstudianteAlta objEstudianteAlta;
     Validador objValidador;
-
+    //vista del menu general
+    MenuGeneralEstudiante objMenuGeneralEstudiante;
     public ControladorEstudianteAlta(EstudianteAlta objEstudianteAlta) {
         this.objEstudianteAlta = objEstudianteAlta;
         objEstudianteAlta.jButton1.addActionListener(this);
+        objEstudianteAlta.botonAltaEstudianteRegresar.addActionListener(this);
         objValidador = new Validador();
+        objOperacionesEstudianteLista = new OperacionesEstudianteLista();
     }
 
     @Override
@@ -65,13 +69,42 @@ public class ControladorEstudianteAlta implements ActionListener {
 //        limpiar();
 
         //Opc
-        OperacionesEstudianteLista objOperacionesEstudianteLista;
-        objOperacionesEstudianteLista = new OperacionesEstudianteLista();
+        
         Estudiante estudiante = new Estudiante();
+        estudiante.setMatricula(Integer.parseInt(objEstudianteAlta.getjTextField1().getText()));
+        estudiante.setNombre(objEstudianteAlta.getjTextField2().getText());
+        estudiante.setApPaterno(objEstudianteAlta.getjTextField3().getText());
+        estudiante.setApMaterno(objEstudianteAlta.getjTextField4().getText());
+        estudiante.setEdad(Integer.parseInt(objEstudianteAlta.getjTextField5().getText()));
         objOperacionesEstudianteLista.setObjEstudiante(estudiante);
         objOperacionesEstudianteLista.create();
-        
+        return;
+        }
+        if(e.getSource()==objEstudianteAlta.botonAltaEstudianteRegresar){
+            System.out.println("Escuchador del boton regresar");
+            this.objEstudianteAlta.setVisible(false);
+            this.objMenuGeneralEstudiante.setVisible(true);
+            return;
         }
     }
+
+    public MenuGeneralEstudiante getObjMenuGeneralEstudiante() {
+        return objMenuGeneralEstudiante;
+    }
+
+    public void setObjMenuGeneralEstudiante(MenuGeneralEstudiante objMenuGeneralEstudiante) {
+        this.objMenuGeneralEstudiante = objMenuGeneralEstudiante;
+    }
+
+    public OperacionesEstudianteLista getObjOperacionesEstudianteLista() {
+        return objOperacionesEstudianteLista;
+    }
+
+    public void setObjOperacionesEstudianteLista(OperacionesEstudianteLista objOperacionesEstudianteLista) {
+        this.objOperacionesEstudianteLista = objOperacionesEstudianteLista;
+    }
+    
+    
+    
 
 }

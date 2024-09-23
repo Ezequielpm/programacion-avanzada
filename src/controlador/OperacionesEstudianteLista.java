@@ -32,8 +32,8 @@ public class OperacionesEstudianteLista extends CRUD {
 
 
     @Override
-    public void read() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public ArrayList read() {
+        return this.objListaEstudiante;
     }
 
     @Override

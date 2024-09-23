@@ -28,7 +28,7 @@ public class OperacionesProfesorLista extends CRUD{
     }
 
     @Override
-    public void read() {
+    public ArrayList read() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
