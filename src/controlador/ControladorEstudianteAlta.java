@@ -45,6 +45,10 @@ public class ControladorEstudianteAlta implements ActionListener {
 //        this.objOpEstudianteLista.create();
 //        
 //        limpiar();
+            return;
+        }
+        if(e.getSource()==objEstudianteAlta.jButton2){
+            return;
         }
     }
     
