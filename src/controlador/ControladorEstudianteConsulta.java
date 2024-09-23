@@ -53,6 +53,7 @@ public class ControladorEstudianteConsulta implements ActionListener{
             if(this.objDefaultTableModel.getRowCount()>0)
                 vaciarTabla(); 
            llenarTabla();
+//           this.objDefaultTableModel.removeRow(0);
            return;
         }
         if(e.getSource()==this.ObjEstudianteConsulta.botonEstudianteConsultaRegresar){

@@ -49,6 +49,11 @@ public class MenuGeneralEstudiante extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 102, 255));
 
         botonAltaEstudiante.setText("Alta estudiante");
+        botonAltaEstudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAltaEstudianteMouseEntered(evt);
+            }
+        });
 
         botonConsultaEstudiante.setText("Consulta estudiante");
 
@@ -86,6 +91,10 @@ public class MenuGeneralEstudiante extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonAltaEstudianteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAltaEstudianteMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAltaEstudianteMouseEntered
 
     /**
      * @param args the command line arguments
