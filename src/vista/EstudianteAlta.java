@@ -10,6 +10,7 @@ import modelo.Estudiante;
 import java.util.ArrayList;
 import controlador.OperacionesEstudianteLista;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -34,6 +35,29 @@ public class EstudianteAlta extends javax.swing.JFrame {
         objControladorEstudianteAlta = new ControladorEstudianteAlta(this);
     }
 
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public JTextField getjTextField4() {
+        return jTextField4;
+    }
+
+    public JTextField getjTextField5() {
+        return jTextField5;
+    }
+
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

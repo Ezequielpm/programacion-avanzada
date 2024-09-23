@@ -4,18 +4,27 @@
  */
 package vista;
 
+import controlador.ControladorEstudianteConsulta;
+
 /**
  *
  * @author ezequ
  */
 public class EstudianteConsulta extends javax.swing.JFrame {
-
+    ControladorEstudianteConsulta objControladorEstudianteConsulta;
     /**
      * Creates new form EstudianteConsulta
      */
     public EstudianteConsulta() {
         initComponents();
+        objControladorEstudianteConsulta = new ControladorEstudianteConsulta(this);
     }
+
+    public ControladorEstudianteConsulta getObjControladorEstudianteConsulta() {
+        return objControladorEstudianteConsulta;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -130,9 +139,9 @@ public class EstudianteConsulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

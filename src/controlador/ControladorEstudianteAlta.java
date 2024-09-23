@@ -8,23 +8,45 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Estudiante;
 import vista.EstudianteAlta;
+import vista.EstudianteConsulta;
 
 /**
  *
  * @author ezequ
  */
 public class ControladorEstudianteAlta implements ActionListener {
+
     EstudianteAlta objEstudianteAlta;
-    public ControladorEstudianteAlta(EstudianteAlta objEstudianteAlta){
+    Validador objValidador;
+    OperacionesEstudianteLista objOperacionesEstudianteLista;
+    EstudianteConsulta objEstudianteConsulta;
+
+    public ControladorEstudianteAlta(EstudianteAlta objEstudianteAlta) {
         this.objEstudianteAlta = objEstudianteAlta;
-        objEstudianteAlta.jButton1.addActionListener(this);
+        this.objEstudianteAlta.jButton1.addActionListener(this);
+        objValidador = new Validador();
+        objOperacionesEstudianteLista = new OperacionesEstudianteLista();
+        this.objEstudianteAlta.jButton2.addActionListener(this);
+        objEstudianteConsulta = new EstudianteConsulta();
+        this.objEstudianteConsulta.setVisible(false);
+        this.objEstudianteConsulta.getObjControladorEstudianteConsulta().setObjControladorEstudianteAlta(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==objEstudianteAlta.jButton1){
+        if (e.getSource() == objEstudianteAlta.jButton1) {
             System.out.println("Escuchador del boton");
-            
+            if (!this.objValidador.validaCajaTextoEntero(objEstudianteAlta.getjTextField1())) {
+                return;
+            } else if (!this.objValidador.validaCajaTextoCadena(objEstudianteAlta.getjTextField2())) {
+                return;
+            } else if (!this.objValidador.validaCajaTextoCadena(objEstudianteAlta.getjTextField3())) {
+                return;
+            } else if (!this.objValidador.validaCajaTextoCadena(objEstudianteAlta.getjTextField4())) {
+
+            } else if (!this.objValidador.validaCajaTextoEnteroEdad(objEstudianteAlta.getjTextField5())) {
+                return;
+            }
 //            this.validaCamposTexto2();
 //        /* ^ aqui hay un error, se corrige en la
 //        rama arreglo-bugs*/
@@ -41,15 +63,30 @@ public class ControladorEstudianteAlta implements ActionListener {
 //        objEstudiante.setEdad(Integer.parseInt(this.jTextField5.getText()));
 //        
 //        //listaEstudiante.add(objEstudiante);
-//        this.objOpEstudianteLista.setObjEstudiante(objEstudiante);
 //        this.objOpEstudianteLista.create();
 //        
 //        limpiar();
+
+            //Opc
+            Estudiante objEstudiante = new Estudiante();
+            objEstudiante.setMatricula(Integer.parseInt(objEstudianteAlta.getjTextField1().getText()));
+            objEstudiante.setNombre(objEstudianteAlta.getjTextField2().getText());
+            objEstudiante.setApPaterno(objEstudianteAlta.getjTextField3().getText());
+            objEstudiante.setApMaterno(objEstudianteAlta.getjTextField4().getText());
+            objEstudiante.setEdad(Integer.parseInt(objEstudianteAlta.getjTextField5().getText()));
+            this.objOperacionesEstudianteLista.setObjEstudiante(objEstudiante);
+
+//        objOperacionesEstudianteLista.setObjEstudiante(estudiante);
+            this.objOperacionesEstudianteLista.create();
             return;
         }
-        if(e.getSource()==objEstudianteAlta.jButton2){
+        if (e.getSource() == objEstudianteAlta.jButton2) {
+            System.out.println("Escuchador del boton consultar");
+            this.objEstudianteAlta.setVisible(false);
+            this.objEstudianteConsulta.setVisible(true);
+
             return;
         }
     }
-    
+
 }
