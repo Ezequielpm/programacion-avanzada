@@ -6,10 +6,11 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import modelo.Estudiante;
 import vista.EstudianteAlta;
 import vista.EstudianteConsulta;
-
+//proxima semana, examen el miercoles
 /**
  *
  * @author ezequ
@@ -20,6 +21,10 @@ public class ControladorEstudianteAlta implements ActionListener {
     Validador objValidador;
     OperacionesEstudianteLista objOperacionesEstudianteLista;
     EstudianteConsulta objEstudianteConsulta;
+    
+    //lo que tiene el código de Kevin
+    ArrayList<Estudiante> objListaEstudiante;
+    Estudiante objEstudiante;
 
     public ControladorEstudianteAlta(EstudianteAlta objEstudianteAlta) {
         this.objEstudianteAlta = objEstudianteAlta;
@@ -86,6 +91,12 @@ public class ControladorEstudianteAlta implements ActionListener {
             this.objEstudianteConsulta.setVisible(true);
 
             return;
+            
+            //mas codigo de kevin
+//            EstudianteConsulta objEstudianteConsulta = new EstudianteConsulta();
+//             VistaConsultaAlumno objConsulta = new VistaConsultaAlumno(this.objListaAlumno);
+//            objConsulta.setSize(500, 500);
+//            objConsulta.setVisible(true);
         }
     }
 
